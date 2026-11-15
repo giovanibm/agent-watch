@@ -1,0 +1,27 @@
+{
+  "name": "agent-watch",
+  "version": "0.1.0",
+  "description": "Cartão ao vivo sob cada chamada de subagent: modelo, tokens, custo, tempo e tool atual.",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "budgetUsd": {
+      "type": "number",
+      "title": "Orçamento por agente (US$)",
+      "description": "Avisa quando o custo estimado de um subagent passa deste valor. 0 desliga o alerta.",
+      "default": 1
+    }
+  },
+  "license": "MIT",
+  "icon": "./.claude-plugin/icon.png",
+  "keywords": [
+    "subagents",
+    "background-tasks",
+    "cost",
+    "tokens"
+  ],
+  "author": {
+    "name": "Giovani Benites Martini"
+  },
+  "homepage": "https://github.com/giovanibm/agent-watch",
+  "repository": "https://github.com/giovanibm/agent-watch"
+}

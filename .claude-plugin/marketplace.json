@@ -1,0 +1,14 @@
+{
+  "name": "agent-watch",
+  "owner": {
+    "name": "Giovani Benites Martini"
+  },
+  "plugins": [
+    {
+      "name": "agent-watch",
+      "source": "./",
+      "description": "Cartão ao vivo sob cada chamada de subagent: modelo, tokens, custo, tempo e tool atual."
+    }
+  ],
+  "description": "Live cards for Claude Code subagents and background tasks: model, tokens, cost and run time."
+}
