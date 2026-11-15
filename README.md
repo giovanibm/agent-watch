@@ -46,6 +46,24 @@ To try it from a local copy: `claude --plugin-dir <path-to-this-folder>`.
 | --- | --- | --- |
 | `budgetUsd` | `1` | Per-agent budget in US$. Past it, the card turns red and a notice appears. `0` turns the alert off. |
 
+To change the default of US$ 1, use any of these:
+
+- **Menu:** in a session, run `/plugin configure agent-watch@agent-watch` and set `budgetUsd`.
+- **At install:** `claude plugin install agent-watch --marketplace giovanibm/agent-watch --config budgetUsd=2`
+- **Settings file:** add the option to `~/.claude/settings.json` (or a project's settings) and restart the session:
+
+  ```json
+  {
+    "pluginConfigs": {
+      "agent-watch@agent-watch": {
+        "options": { "budgetUsd": 2 }
+      }
+    }
+  }
+  ```
+
+Use `0` to turn the budget alert off. The value is in US$ per agent, and the alert fires once per agent.
+
 ## About the costs
 
 The engine reports only the session's total cost, not each agent's. The plugin estimates it as tokens × price per model, using the table at the top of `hooks/register.tsx` (checked on 2026-11-03). Update the table when prices change. Limits: cached reads use 10% of the input price when the published cache price is unknown, cache writes use 125%, and Haiku 5.5 charges more above 100k tokens per call than the table accounts for. The cost reference only uses agents finished in the current session; it starts over with each new session.
